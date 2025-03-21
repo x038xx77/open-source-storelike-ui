@@ -1,0 +1,23 @@
+---
+export interface Props {
+  label: string;
+  type?: "button" | "submit" | "reset";
+}
+
+const { label, type = "button" } = Astro.props;
+---
+<button type={type} class="button">
+  {label}
+</button>
+
+
+<style>
+    .button {
+  @apply px-4 py-2 bg-blue-500 text-white rounded-md shadow-md;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  @apply bg-blue-700;
+}
+</style>
